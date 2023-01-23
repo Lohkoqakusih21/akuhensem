@@ -1,0 +1,51 @@
+:root {
+  --royal-blue: #5F5EE8;
+  --primary: var(--royal-blue);
+
+  --gutter: 2rem; /* 32px */
+}
+
+html {
+  font-size: 16px;
+  word-spacing: 1px;
+  text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+}
+
+@tailwind base;
+@tailwind components;
+
+body {
+  @apply text-black font-sans font-normal;
+}
+
+@responsive {
+  .row {
+    margin-left: calc(-1 * var(--gutter) / 2);
+    margin-right: calc(-1 * var(--gutter) / 2);
+  }
+  .col {
+    padding-left: calc(var(--gutter) / 2);
+    padding-right: calc(var(--gutter) / 2);
+  }
+}
+
+.translate-y-center {
+  transform: translateY(-50%);
+}
+
+@tailwind utilities;
